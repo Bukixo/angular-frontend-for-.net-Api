@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Loan } from '../loan.model';
+import { DataService } from '../data.service';
+
+
 
 @Component({
   selector: 'app-get-loan',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetLoanComponent implements OnInit {
 
-  constructor() { }
+  loans: Loan[]
 
-  ngOnInit() {
+  constructor( private dataService: DataService) {}
+
+  ngOnInit(){
+    this.dataService
+      .getLoan()
+      .subscribe((data: Loan[]) => {
+        this.loans = data;
+    });
   }
+
 
 }

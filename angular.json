@@ -62,7 +62,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "ang-loan:build:production"
+              "browserTarget": "ang-loan:build:production",
+              "proxyConfig": "proxy.conf.json"
             }
           }
         },

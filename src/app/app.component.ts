@@ -13,6 +13,6 @@ export class AppComponent {
     this.dataService = dataService
   }
 
-  data = this.dataService.getLoans()
+  //data = this.dataService.getLoans()
 
 }

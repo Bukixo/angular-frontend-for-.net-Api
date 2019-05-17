@@ -6,7 +6,7 @@ import { GetLoanComponent } from './get-loan/get-loan.component';
 
 const routes: Routes = [
   {
-    path: 'loans/create',
+    path: 'loans/add',
     component: AddLoanComponent
   },
   {

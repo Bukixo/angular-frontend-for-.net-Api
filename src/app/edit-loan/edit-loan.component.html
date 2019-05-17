@@ -1,3 +1,29 @@
-<p>
-  edit-loan works!
-</p>
+
+     
+ <form [formGroup]="angForm" novalidate>
+  <div class="form-group">
+    <label>Loan Name</label>
+    <input type="text" class="form-control" formControlName="name" #name [(ngModel)] = "loan.name"/>
+  </div>
+  <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
+    <div *ngIf="angForm.controls['name'].errors.required">
+      loan Name is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Repayment </label>
+    <input type="text" class="form-control" formControlName="repayment" #repayment [(ngModel)] = "loan.repayment"/>
+  </div>
+  <div *ngIf="angForm.controls['repayment'].invalid && (angForm.controls['repayment'].dirty || angForm.controls['repayment'].touched)" class="alert alert-danger">
+    <div *ngIf="angForm.controls['repayment'].errors.required">
+     Repyament value is required
+    </div>
+  </div>
+  
+  
+  <div class="form-group">
+    <button (click)="editLoan(name.value, repayment.value)" type="submit" 
+    [disabled]="angForm.pristine || angForm.invalid" 
+    class="btn btn-primary">Update Loan</button>
+  </div>
+</form>

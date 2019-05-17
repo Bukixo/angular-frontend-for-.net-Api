@@ -1,30 +1,39 @@
 import { Injectable } from '@angular/core';
-import { getLocaleNumberSymbol } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  loansData : any
 
-  getLoans(){
+  uri = 'http://localhost:5000/api/loans'
 
-    this.loansData = [
-      {
-        "name" : "Loan 1",
-        "repayment": "£324,000"
-      },
-      {
-        "name" : "Loan 2",
-        "repayment": "£330,440"
-      },
-      {
-        "name" : "Loan 3",
-        "repayment": "£4566"
-      }
-    ]
-    return this.loansData
+  constructor(private http: HttpClient) { }
+
+  addLoan(name, repayment) {
+    const obj = {
+      name: name,
+      repayment: repayment
+    };
+    console.log(obj);
+    this.http.post(`${this.uri}`, obj)
+      .subscribe(res => console.log('Done'));
   }
-  
+
+  getLoan() {
+    return this
+      .http
+      .get(`${this.uri}`);
+  }
+
+  editLoan(id){
+    return this
+    .http
+    .get(`${this.uri}/${id}`);
+  }
+
 }
+
+
