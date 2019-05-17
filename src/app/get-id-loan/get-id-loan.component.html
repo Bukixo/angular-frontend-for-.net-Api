@@ -1,0 +1,3 @@
+{{loan.name}}
+<button mat-button [routerLink]="['loans/edit', loan.id]">Edit</button>
+<button mat-button (click) = "deleteLoan(loan.id)" [routerLink]="['']">Delete</button>

@@ -17,11 +17,10 @@ export class GetLoanComponent implements OnInit {
 
   ngOnInit(){
     this.dataService
-      .getLoan()
+      .getAllLoans()
       .subscribe((data: Loan[]) => {
         this.loans = data;
     });
   }
-
 
 }

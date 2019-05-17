@@ -22,8 +22,10 @@
     
     
     <div class="form-group">
-      <button (click)="addLoan(name.value, repayment.value)" type="submit" 
+      <button [routerLink]="['']" (click)="addLoan(name.value, repayment.value)" type="submit" 
       [disabled]="angForm.pristine || angForm.invalid" 
       class="btn btn-primary">Add Loan</button>
     </div>
   </form>
+
+ 

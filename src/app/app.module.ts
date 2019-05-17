@@ -8,10 +8,11 @@ import { GetLoanComponent } from './get-loan/get-loan.component';
 import { AddLoanComponent } from './add-loan/add-loan.component';
 import { EditLoanComponent } from './edit-loan/edit-loan.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatFormFieldModule, MatInputModule, MatDividerModule, MatCardModule, MatToolbarModule} from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { GetIdLoanComponent } from './get-id-loan/get-id-loan.component';
 
 
 
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     GetLoanComponent,
     AddLoanComponent,
-    EditLoanComponent
+    EditLoanComponent,
+    GetIdLoanComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatDividerModule
     ],
   providers: [
    DataService

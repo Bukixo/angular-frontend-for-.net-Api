@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DataService } from './../data.service'
-import { RecursiveTemplateAstVisitor } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-edit-loan',
@@ -34,6 +34,12 @@ export class EditLoanComponent implements OnInit {
       this.dataService.editLoan(params['id']).subscribe(res =>{
         this.loan = res;
       });
+    });
+  }
+  updateLoan(name, repayment){
+    this.route.params.subscribe(params => {
+      this.dataService.updateLoan(name, repayment, params['id']);
+      this.router.navigate([''])
     });
   }
 

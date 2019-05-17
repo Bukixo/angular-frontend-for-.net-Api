@@ -22,10 +22,16 @@ export class DataService {
       .subscribe(res => console.log('Done'));
   }
 
-  getLoan() {
+  getAllLoans() {
     return this
       .http
       .get(`${this.uri}`);
+  }
+
+  getLoan(id) {
+    return this
+      .http
+      .get(`${this.uri}/${id}`);
   }
 
   editLoan(id){
@@ -34,6 +40,22 @@ export class DataService {
     .get(`${this.uri}/${id}`);
   }
 
+  updateLoan(name, repayment, id){
+    const obj = {
+      name: name,
+      repayment: repayment
+    };
+    this
+    .http
+    .put(`${this.uri}/${id}`, obj)
+    .subscribe(res => console.log('Update Done'));
+  }
+
+  deleteLoan(id) {
+    return this
+    .http
+    .delete(`${this.uri}/${id}`);
+  }
 }
 
 

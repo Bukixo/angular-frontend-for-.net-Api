@@ -22,8 +22,9 @@
   
   
   <div class="form-group">
-    <button (click)="editLoan(name.value, repayment.value)" type="submit" 
+    <button (click)="updateLoan(name.value, repayment.value, loan.id)" type="submit" 
     [disabled]="angForm.pristine || angForm.invalid" 
     class="btn btn-primary">Update Loan</button>
   </div>
 </form>
+
